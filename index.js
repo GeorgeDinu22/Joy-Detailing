@@ -227,40 +227,39 @@ document.addEventListener('DOMContentLoaded',()=>{
     ProgresBar[0].classList.add('current-line');
 
 
-    const QACards = document.querySelectorAll('.card-qa');
-    total_height = [];
-
+    window.addEventListener('load',()=>{
+        const QACards = document.querySelectorAll('.card-qa');
+        total_height = [];
     
-    QACards.forEach((card,i) =>{
-
-        let contor_qa = 0;
-
-        total_height.push(card.offsetHeight);
+        QACards.forEach((card,i) =>{
     
-        const Intrebare = card.querySelector('.intrebare');
-        const Raspuns = card.querySelector('.raspuns');
-        const QA_Icon = card.querySelector('i');
-
-        let intrebare_height = Intrebare.offsetHeight + 4;
-
-        card.style.height = `${intrebare_height}px `
-
-        card.addEventListener('click',()=>{
-            if( contor_qa % 2 == 0){
-                 card.style.height = `${total_height[i]}px`
-                 contor_qa++;
-                 QA_Icon.classList.add('rotate');
-            }
-            else{
-                 card.style.height = `${intrebare_height}px `
-                 contor_qa++;
-                 QA_Icon.classList.remove('rotate');
-            }
-           
+            let contor_qa = 0;
+    
+            total_height.push(card.offsetHeight);
+        
+            const Intrebare = card.querySelector('.intrebare');
+            const Raspuns = card.querySelector('.raspuns');
+            const QA_Icon = card.querySelector('i');
+    
+            let intrebare_height = Intrebare.offsetHeight + 4;
+    
+            card.style.height = `${intrebare_height}px `
+    
+            card.addEventListener('click',()=>{
+                if( contor_qa % 2 == 0){
+                     card.style.height = `${total_height[i]}px`
+                     contor_qa++;
+                     QA_Icon.classList.add('rotate');
+                }
+                else{
+                     card.style.height = `${intrebare_height}px `
+                     contor_qa++;
+                     QA_Icon.classList.remove('rotate');
+                }
+               
+            })
         })
     })
-
-
   
     const Week = ["Duminica","Luni" , "Marti", "Miercuri", "Joi", "Vineri","Samabata"];
     let Current_Date =  new Date();
