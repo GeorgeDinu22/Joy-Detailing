@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded',()=>{
         Body.classList.remove('no-scroll');
     },2600);
         setTimeout(()=>{
-        LoadingScreen.style.display = 'none'
+        LoadingScreen.style.display = 'none';
     },3200);
 
 
