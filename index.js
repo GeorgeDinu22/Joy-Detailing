@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded',()=>{
         LoadingScreen.classList.add('loadingCompleted');
         Body.classList.remove('no-scroll');
     },2600);
+        setTimeout(()=>{
+        LoadingScreen.style.display = 'none'
+    },3200);
 
 
     const Header = document.querySelector('header');
