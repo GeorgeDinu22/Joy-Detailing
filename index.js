@@ -140,19 +140,19 @@ document.addEventListener('DOMContentLoaded',()=>{
         Servicii_BTN.addEventListener('click',()=>{
             switch(Servicii_BTN.textContent){
                  case "Prețuri Curățare Motor":
-                     window.location = "servicii/curatare-motor/";
+                     window.location = "servicii/curatare-motor";
                      break;
                  case "Prețuri Detailing Interior":
-                     window.location = "servicii/detailing-interior/";
+                     window.location = "servicii/detailing-interior";
                      break;
                  case "Prețuri Detailing Exterior":
-                     window.location = "servicii/detailing-exterior/";
+                     window.location = "servicii/detailing-exterior";
                      break;
                  case "Prețuri Recondiționare Faruri":
-                    window.location = "servicii/reconditionare-faruri/";
+                    window.location = "servicii/reconditionare-faruri";
                     break;
                 case "Prețuri Semi Detailing":
-                    window.location = "servicii/semi-detailing/";
+                    window.location = "servicii/semi-detailing";
                     break;    
             }
          })
