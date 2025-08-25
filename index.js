@@ -161,7 +161,6 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     Servicii_Slides.forEach(slide =>{
         slide.addEventListener('click',()=>{
-            console.log(Array.from(Servicii_Slides).indexOf(slide))
            Select_SLide(Array.from(Servicii_Slides).indexOf(slide));
            Select_SLide_SVG(Array.from(Servicii_Slides).indexOf(slide));
            Set_Text((Array.from(Servicii_Slides).indexOf(slide)));
@@ -181,7 +180,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     let Contor_Video = 0;
 
     Play_Screen.addEventListener('click',()=>{
-        console.log("Ati dat click pe video")
         if (Video.paused) {
             Video.play();
             Play_Screen.classList.add('video-play');
@@ -388,7 +386,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     let Now_Date = new Date();
     let Current_Hour = Now_Date.getHours();
     let Current_Day = Now_Date.getDay();
-    console.log(Now_Date.getDay())
    
     if (Current_Day === 0 || Current_Day === 6) {
         Program_Message.textContent = 'Închis, Luni - Vineri: 09:00 - 18:00';
