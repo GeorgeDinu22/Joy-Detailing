@@ -180,13 +180,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     let Contor_Video = 0;
 
     Play_Screen.addEventListener('click', () => {
-        console.log("Ati dat click pe video");
 
-    if (Contor_Video === 0) {
-        Video.currentTime = 0; 
-        Video.play();
-        Play_Screen.classList.add('video-play');
-    } else {
+
         if (Video.paused) {
             Video.play();
             Play_Screen.classList.add('video-play');
@@ -194,14 +189,12 @@ document.addEventListener('DOMContentLoaded',()=>{
             Video.pause();
             Play_Screen.classList.remove('video-play');
         }
-    }
 
     Contor_Video++;
 });
 
     Video.addEventListener('ended', () => {
         Play_Screen.classList.remove('video-play');
-        Contor_Video = 0; 
     });
     const Counters = document.querySelectorAll('.card-counter span');
     const BodyCounter = document.querySelector('.body-counter');
