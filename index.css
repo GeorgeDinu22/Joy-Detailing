@@ -2083,7 +2083,7 @@ header.invisible{
     justify-content: end;
     gap: 12px;
     pointer-events: none;
-    z-index: 999999;
+    z-index: 9;
     background-image: linear-gradient(to top, black 10%, transparent);
 }
 .body-maps  div span{
