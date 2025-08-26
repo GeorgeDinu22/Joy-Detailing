@@ -84,15 +84,100 @@
         <meta property="og:image:height" content="598">
         <meta property="og:url" content="https://www.joydetailing.ro/"/>
         <meta property="og:type" content="website"/>
-    
+
+ <style>
+            .loading-screen{
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                top: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 999999;
+                gap: 0;
+                background-color: rgb(0, 0, 0);
+                transition: all 500ms ease-in-out;
+            }
+            .loading-screen.loadingCompleted{
+               visibility: hidden;
+               pointer-events: none;
+                opacity: 0;
+            }
+            .loading-container{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 12px;
+                position: relative;
+                height: 100px;
+            }
+            .loading-bar{
+                width: 98%;
+                height: 55px;
+                border-radius: 10px;
+                background-color: var(--CardColor);
+                position: relative;
+            }
+            .loading-line{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 90px;
+                height: 100%;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--mainColor);
+                transition: width 1.25s linear;
+            }
+            .loading-line.StartAnimation{
+                width: 100%;
+                justify-content: end;
+            }
+            .loading-line img{
+                width: 90px;
+                position: relative;
+                height: auto;
+                right: 4px;
+                transition: left 1.5s ease-in-out;
+            }
+            .loading-lineimg.StartAnimation{
+                left:82.5%;
+                opacity: 1;
+                visibility: visible;
+            }
+            @media(min-width:600px){
+                .loading-bar{
+                    width: 80%;
+                    height: 70px;
+                }
+                .loading-line img{
+                    width: 100px;
+                }
+            }
+            @media(min-width:1100px){
+                .loading-bar{
+                    width: 40%;
+                }
+            }
+          </style>
+        
         <link rel="icon" href="whatsapp.jpg" type="image/jpeg">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="index.css" media="print" onload="this.media='all'">
         <link rel="preload" href="images/heroSection.webp" as="image"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Modern+Antiqua&family=Niconne&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+VN:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Modern+Antiqua&family=Niconne&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+VN:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+        <noscript>
+          <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Modern+Antiqua&family=Niconne&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+VN:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+        </noscript>
     
-        <script defer src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
         <script defer src="index.js"></script>
         <script defer src="https://kit.fontawesome.com/e313640c27.js" crossorigin="anonymous"></script>
     
