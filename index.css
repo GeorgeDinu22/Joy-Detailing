@@ -533,12 +533,12 @@ header.invisible{
     color: white;
     z-index: 1;
     font-size: clamp(44px,10vw,68px);
+    font-weight: 800;
 }
 .hero-section span{
     color:var(--mainColor); 
     font-size: clamp(48px,12vw,72px);
     letter-spacing: 2px;
-    font-family: "Special Gothic Expanded One", sans-serif;
 }
 .hero-section p{
     color: white;
@@ -1568,6 +1568,7 @@ header.invisible{
     line-height: 1.5;
     width: 98%;
     margin: 0 auto;
+    font-style: italic;
 }
 .review-progres-line{
     width: 75%;
