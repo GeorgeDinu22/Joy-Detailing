@@ -142,41 +142,41 @@ document.addEventListener('DOMContentLoaded',()=>{
 
     ///// SLIDER BEFORE / AFTER
     const container = document.getElementById('sliderContainer');
-    let isDragging = false;
 
-    if(container){
+        let isDragging = false;
         const afterImage = container.querySelector('.slider-after');
-        const sliderBtn = document.getElementById('sliderBtn');
-        const sliderLine = document.getElementById('sliderLine');
-        
+        const sliderBtn = container.querySelector('.slider-button');
+        const sliderLine = container.querySelector('.slider-line');
+    
         function setSliderPosition(x) {
             const rect = container.getBoundingClientRect();
             let pos = x - rect.left;
             pos = Math.max(0, Math.min(pos, rect.width));
-        
+    
             let percent = (pos / rect.width) * 100;
-        
             percent = Math.max(4, Math.min(percent, 96));
-        
+    
             afterImage.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
             sliderBtn.style.left = `${percent}%`;
             sliderLine.style.left = `${percent}%`;
         }
-          
-              sliderBtn.addEventListener('mousedown', () => isDragging = true);
-              document.addEventListener('mouseup', () => isDragging = false);
-              document.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                setSliderPosition(e.clientX);
-              });
-              
-              sliderBtn.addEventListener('touchstart', () => isDragging = true);
-              document.addEventListener('touchend', () => isDragging = false);
-              document.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
-                setSliderPosition(e.touches[0].clientX);
-              });
-    }
+    
+        function dragMove(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            let x = e.clientX;
+            if (e.touches) x = e.touches[0].clientX;
+            requestAnimationFrame(() => setSliderPosition(x));
+        }
+    
+        sliderBtn.addEventListener('mousedown', () => isDragging = true);
+        document.addEventListener('mouseup', () => isDragging = false);
+        document.addEventListener('mousemove', dragMove);
+    
+        sliderBtn.addEventListener('touchstart', () => isDragging = true);
+        document.addEventListener('touchend', () => isDragging = false);
+        document.addEventListener('touchmove', dragMove, { passive: false });
+    
     
    
    
